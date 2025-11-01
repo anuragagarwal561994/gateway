@@ -30,8 +30,8 @@ func TestBuildLoadBalancer_ClientSideWeightedRoundRobin(t *testing.T) {
 
 	policy := &egv1a1.ClusterSettings{
 		LoadBalancer: &egv1a1.LoadBalancer{
-			Type:                            egv1a1.ClientSideWeightedRoundRobinLoadBalancerType,
-			ClientSideWeightedRoundRobin:    cswrr,
+			Type:                         egv1a1.ClientSideWeightedRoundRobinLoadBalancerType,
+			ClientSideWeightedRoundRobin: cswrr,
 		},
 	}
 
@@ -51,8 +51,8 @@ func TestBuildLoadBalancer_ClientSideWeightedRoundRobin(t *testing.T) {
 	require.Equal(t, []string{"named_metrics.foo", "cpu_utilization"}, got.MetricNamesForComputingUtilization)
 }
 
-func ptrBool(v bool) *bool { return &v }
-func ptrFloat32(v float32) *float32 { return &v }
+func ptrBool(v bool) *bool                   { return &v }
+func ptrFloat32(v float32) *float32          { return &v }
 func ptrDuration(d string) *gwapiv1.Duration { v := gwapiv1.Duration(d); return &v }
 
 func toMetaV1Duration(t *testing.T, d string) *metav1.Duration {

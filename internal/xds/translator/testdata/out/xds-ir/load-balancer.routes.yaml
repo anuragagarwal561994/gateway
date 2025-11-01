@@ -130,3 +130,10 @@
         cluster: fifteenth-route-dest
         upgradeConfigs:
         - upgradeType: websocket
+    - match:
+        prefix: /
+      name: sixteenth-route
+      route:
+        cluster: sixteenth-route-dest
+        upgradeConfigs:
+        - upgradeType: websocket

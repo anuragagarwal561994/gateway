@@ -123,3 +123,10 @@
             headerName: bar
         upgradeConfigs:
         - upgradeType: websocket
+    - match:
+        prefix: /
+      name: fifteenth-route
+      route:
+        cluster: fifteenth-route-dest
+        upgradeConfigs:
+        - upgradeType: websocket
